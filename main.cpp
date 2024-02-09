@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    Complex A(1, 2), B(3, 4);
-    (A / B).printNumber();
+    Complex A(1, 2), B(0, 0);
+    (A / 2).printNumber();
     return 0;
 }

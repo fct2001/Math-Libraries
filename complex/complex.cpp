@@ -42,5 +42,17 @@ Complex Complex :: operator/(Complex number) {
     double a = real, b = imaginary;
     double c = number.real, d = number.imaginary;
     double denominator = c * c + d * d;
+    if(denominator == 0) {
+        std :: cout << "Cannot divide by 0 + 0i" << std :: endl;
+        return Complex(real, imaginary);
+    }
     return Complex((a * c + b * d) / denominator, (b * c - a * d) / denominator);
+}
+
+Complex Complex :: operator*(double number) {
+    return Complex(real * number, imaginary * number);
+}
+
+Complex Complex :: operator/(double number) {
+    return Complex(real / number, imaginary / number);
 }
