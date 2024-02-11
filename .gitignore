@@ -2,3 +2,4 @@
 *.o
 .vscode/settings.json
 main.cpp
+main
