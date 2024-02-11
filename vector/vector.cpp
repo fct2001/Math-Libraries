@@ -55,3 +55,11 @@ Vector Vector :: operator*(double number) {
 Vector Vector :: operator/(double number) {
     return *this * (1 / number);
 }
+
+int Vector :: getSize(void) {
+    return elements.size();
+}
+
+double Vector :: operator[](int index) {
+    return elements[index];
+}

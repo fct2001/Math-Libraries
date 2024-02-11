@@ -14,6 +14,8 @@ class Vector {
         double operator*(Vector);
         Vector operator*(double);
         Vector operator/(double);
+        int getSize(void);
+        double operator[](int); // does not check range
 };
 
 #endif
