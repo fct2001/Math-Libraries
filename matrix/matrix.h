@@ -12,6 +12,11 @@ class Matrix {
         void printMatrix(void);
         Vector getRow(int);
         Vector getColumn(int);
+        double getElement(int, int);
+        Matrix operator+(Matrix);
+        Matrix operator-(Matrix);
+        Matrix operator*(Matrix);
+        Matrix operator/(Matrix);
 };
 
 #endif

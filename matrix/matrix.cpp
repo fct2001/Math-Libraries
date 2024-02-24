@@ -44,3 +44,53 @@ Vector Matrix :: getColumn(int column) {
     }
     return Vector(columnElements);
 }
+
+double Matrix :: getElement(int row, int column) {
+    return elements[n * row + column];
+}
+
+Matrix Matrix :: operator+(Matrix matrix) {
+    std :: vector<double> newElements;
+    if(n == matrix.n && m == matrix.m) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                newElements.push_back(getElement(i, j) + matrix.getElement(i, j));
+            }
+        }
+    }
+    return Matrix(Vector(newElements), n, m);
+}
+
+Matrix Matrix :: operator-(Matrix matrix) {
+    std :: vector<double> newElements;
+    if(n == matrix.n && m == matrix.m) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                newElements.push_back(getElement(i, j) - matrix.getElement(i, j));
+            }
+        }
+    }
+    return Matrix(Vector(newElements), n, m);
+}
+
+Matrix Matrix :: operator*(Matrix matrix) {
+    double newElement;
+    Vector rowVector, columnVector;
+    std :: vector<double> newElements;
+    if(m != matrix.n) return Matrix(Vector(), 0, 0);
+    else {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < matrix.m; j++) {
+                rowVector = getRow(i);
+                columnVector = matrix.getColumn(j);
+                newElement = rowVector * columnVector;
+                newElements.push_back(newElement);
+            }
+        }
+        return Matrix(Vector(newElements), n, matrix.m);
+    }
+}
+
+Matrix Matrix :: operator/(Matrix matrix) {
+
+}
